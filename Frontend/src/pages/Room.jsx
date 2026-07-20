@@ -24,7 +24,7 @@ const Room = () => {
   useEffect(() => {
     getroomData();
 
-    const temp = io("http://localhost:3000", {
+    const temp = io("https://socket-io-ktu1.onrender.com", {
       query: {
         roomId: roomId,
       },
@@ -41,7 +41,7 @@ const Room = () => {
 
   const getroomData = async () => {
     await axios
-      .get(`http://localhost:3000/api/rooms/${roomId}`)
+      .get(`https://socket-io-ktu1.onrender.com/api/rooms/${roomId}`)
       .then((res) => {
         setroomData(res.data.room);
       })

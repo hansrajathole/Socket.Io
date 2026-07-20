@@ -16,7 +16,7 @@ const Home = () => {
 
 
   const getAllrooms = async ()=>{
-       await axios.get("http://localhost:3000/api/rooms/allrooms")
+       await axios.get("https://socket-io-ktu1.onrender.com/api/rooms/allrooms")
        .then((res)=>{
             console.log(res.data.rooms);
             setroomData(res.data.rooms)
@@ -28,7 +28,7 @@ const Home = () => {
   }
 
   const createRoom = async ()=>{
-    await axios.post("http://localhost:3000/api/rooms/create", {roomName})
+    await axios.post("https://socket-io-ktu1.onrender.com/api/rooms/create", {roomName})
     .then((res)=>{
         console.log(res);
         getAllrooms()
